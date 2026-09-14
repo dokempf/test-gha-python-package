@@ -1,0 +1,12 @@
+.template: &template
+  script:
+    - python -m pip install .[tests]
+    - python -m pytest --nbval
+
+test-test_gha_python_package-python3.10:
+  image: python:3.10
+  <<: *template
+
+test-test_gha_python_package-python3.13:
+  image: python:3.13
+  <<: *template
